@@ -32,6 +32,7 @@
     "@storybook/addon-essentials": "^7.4.5",
     "@storybook/addon-interactions": "^7.4.5",
     "@storybook/addon-links": "^7.4.5",
+    "@storybook/addon-svelte-csf": "^4.0.9",
     "@storybook/blocks": "^7.4.5",
     "@storybook/svelte": "^7.4.5",
     "@storybook/sveltekit": "^7.4.5",
@@ -53,5 +54,8 @@
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "less": "^4.2.0"
+  }
 }
