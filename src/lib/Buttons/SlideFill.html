@@ -1,0 +1,66 @@
+<script lang="ts">
+
+    let href = '';
+    let className = '';
+    export { className as class };
+    export let style = '';
+    export let color = '';
+    export let animationBackgroundColor = '#fff200';
+    export let animationDuration = '0.7s';
+    export let overrideContent = false;
+    export let backgroundColor = '';
+    export let animationColor = '';
+    export let animationContent = 'Hola';
+</script>
+
+<div class="">
+    <a href="">
+        Submit
+    </a>
+</div>
+
+<style lang="less">
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+        font-size: 45px;
+        border: 5px solid #272727;
+        padding: 40px 80px;
+        position: relative;
+        overflow: hidden;
+        transition: color 0.5s;
+
+        &:before {
+
+            transform-origin: bottom left;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            transform: translateX(-100%);
+
+            background-color: black;
+            z-index: -1;
+            transition: all 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        &:hover {
+            color: white;
+        }
+
+        &:hover:before {
+
+            transform: translateX(0);
+        }
+
+    }
+</style>
