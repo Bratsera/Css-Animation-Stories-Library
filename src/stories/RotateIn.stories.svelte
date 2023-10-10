@@ -3,7 +3,7 @@
 
   export const meta = {
     
-    title: 'RotateIn/Button',
+    title: 'Buttons/RotateIn',
     component: RotateIn,
     tags: ['autodocs'],
     argTypes: {

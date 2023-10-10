@@ -3,7 +3,7 @@
 
   export const meta = {
     
-    title: 'SlideAll/Button',
+    title: 'Buttons/SlideAll',
     component: SlideAll,
     tags: ['autodocs'],
     argTypes: {
