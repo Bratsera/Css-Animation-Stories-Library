@@ -1,24 +1,16 @@
 <script context="module">
-	import SlideAll from '$lib/Buttons/SlideAll.svelte';
+	import LetterStretch from '$lib/Buttons/LetterStretch.svelte';
 
 	export const meta = {
-		title: 'Buttons/SlideAll',
-		component: SlideAll,
+		title: 'Buttons/LetterStretch',
+		component: LetterStretch,
 		tags: ['autodocs'],
 		argTypes: {
-			color: { control: 'color' },
-			animationColor: {
-				control: 'color'
-			},
-			animationBackgroundColor: { control: 'color' },
-			backgroundColor: {
-				control: 'color'
-			},
+			startColor: { control: 'color' },
+			endColor: { control: 'color' },
+			startBackgroundColor: { control: 'color' },
+			endBackgroundColor: { control: 'color' },
 			slot: { control: 'text' },
-			direction: {
-				control: { type: 'select' },
-				options: ['in', 'out']
-			}
 		}
 	};
 </script>
@@ -29,22 +21,21 @@
 
 <Template let:args>
 	<!--👇 'on:click' allows to forward event to addon-actions  -->
-	<SlideAll {...args}>
+	<LetterStretch {...args}>
 		{#if args.slot}
 			{args.slot}
 		{:else}
 			Hover me
 		{/if}
-	</SlideAll>
+	</LetterStretch>
 </Template>
 <Story name="Customize Text"/>
 
-<Story name="In to Out">
-	<SlideAll>In to Out</SlideAll>
+<Story name="Small">
+	<LetterStretch height='100px' width='150px' >Small</LetterStretch>
 </Story>
-
-<Story name="Out to In">
-	<SlideAll direction="out" color="white" animationColor="black">Out to In</SlideAll>
+<Story name="Red to violet">
+	<LetterStretch startColor='#fa2727' endColor='#6720ce' endLetterSpacing='0px' endFontWeight=300 endFontSize='45px'>Color change</LetterStretch>
 </Story>
 
 

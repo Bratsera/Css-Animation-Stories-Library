@@ -6,10 +6,8 @@
 	export let color: string = 'black';
 	export let animationBackgroundColor: string = 'black';
 	export let animationDuration: string = '0.7s';
-	export let overrideContent = true;
 	export let backgroundColor: string = '';
 	export let animationColor: string = 'white';
-	export let animationContent = '';
 // div wrapper für normal background, animated back zIndex -1 und a tag color z index0
 	let start = '';
 	let finish = '';
@@ -31,9 +29,7 @@
 	<a
 		{href}
 		class={className}
-		style="--color:{color}; --start:{start}; --finish:{finish}; --animationColor:{animationColor}; --animationBackgroundColor:{animationBackgroundColor}; --animationDuration:{animationDuration}; {overrideContent
-			? `--backgroundColor:${backgroundColor}; --content:"${animationContent}"; --zIndex:-1;`
-			: `--content:""; --zIndex:-1;`} {style}"
+		style="--backgroundColor:{backgroundColor}; --color:{color}; --start:{start}; --finish:{finish}; --animationColor:{animationColor}; --animationBackgroundColor:{animationBackgroundColor}; --animationDuration:{animationDuration}; {style}"
 	>
 		<slot>Submit</slot>
 	</a>
@@ -57,7 +53,7 @@
 			
 		}
 		&:before {
-			content: var(--content);
+			content: "";
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -67,7 +63,7 @@
 
 			color: var(--animationColor);
 			background-color: var(--animationBackgroundColor);
-			z-index: var(--zIndex);
+			z-index: -1;
 			transition: transform var(--animationDuration);
 			display: flex;
 			justify-content: center;
@@ -77,7 +73,7 @@
 		}
 
 		&:after {
-			content: var(--content);
+			content: "";
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -87,7 +83,7 @@
 
 			color: var(--animationColor);
 			background-color: var(--animationBackgroundColor);
-			z-index: var(--zIndex);
+			z-index: -1;
 			transition: transform var(--animationDuration);
 			display: flex;
 			justify-content: center;

@@ -3,22 +3,30 @@
 	let className = '';
 	export { className as class };
 	export let style = '';
-	export let color = 'white';
-	export let animationBackgroundColor = 'red';
-	export let animationDuration = '0.7s';
-	export let startLetterSpacing = '3px';
-	export let endLetterSpacing = '3px';
-	export let backgroundColor = 'black';
-	export let animationColor = 'black';
+	export let startColor = 'black';
+	export let endColor = 'black';
+	export let startBackgroundColor = 'transparent';
+	export let endBackgroundColor = 'transparent';
+	export let animationDuration = '0.5s';
+	export let startLetterSpacing = '-2px';
+	export let endLetterSpacing = '5px';
+	export let startFontSize = '45px';
+	export let endFontSize = '55px';
+	export let startFontWeight = 300;
+	export let endFontWeight = 900;
+
+	export let width = '300px';
+	export let height = '120px';
+
 
 
 </script>
 
-<div class="">
+<div style:width style:height class="">
 	<a
 		{href}
 		class={className}
-		style="--shineDuration: {shineDuration}; --backgroundColor:{backgroundColor}; --color:{color}; --animationColor:{animationColor}; --animationBackgroundColor:{animationBackgroundColor}; --animationDuration:{animationDuration};"
+		style="--fontWeight:{startFontWeight}; --endFontWeight:{endFontWeight}; --fontSize:{startFontSize}; --endFontSize:{endFontSize}; --letterSpacing:{startLetterSpacing}; --endLetterSpacing:{endLetterSpacing}; --backgroundColor:{startBackgroundColor}; --color:{startColor}; --endColor:{endColor}; --endBackgroundColor:{endBackgroundColor}; --animationDuration:{animationDuration};"
 	>
 		<slot>Submit</slot>
 	</a>
@@ -26,38 +34,29 @@
 
 <style lang="less">
 	a {
-		display: inline-block;
 		text-decoration: none;
 		color: var(--color);
-		font-family: sans-serif;
-		letter-spacing: 3px;
-		font-size: 45px;
-		font-weight: bold;
-		border: 5px solid var(--color);
-		padding: 40px 80px;
+		font-family: 'roboto';
+		letter-spacing: var(--letterSpacing);
+		font-size: var(--fontSize);
+		font-weight: 300;
+		border: 3px solid var(--color);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+
 		position: relative;
 		overflow: hidden;
 		background-color: var(--backgroundColor);
-		transition: background-color var(--animationDuration);
-		&:before {
-
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 50%;
-			height: 30px;
-			width: 100%;
-			transform: translateX(-100%) rotate(45deg);
-			background-color: white;
-			transition: transform var(--shineDuration);
-		}
+		transition: all var(--animationDuration);
 		&:hover {
-			background-color: var(--animationBackgroundColor);
-			color: var(--animationColor);
-		}
-
-		&:hover:before {
-            transform: translateX(100%) rotate(45deg);            
+			background-color: var(--endBackgroundColor);
+			font-size: var(--endFontSize);
+			color: var(--endColor);
+			letter-spacing: var(--endLetterSpacing);
+			border: 5px solid var(--endColor);
 		}
 	}
 </style>
