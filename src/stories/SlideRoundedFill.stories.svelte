@@ -3,7 +3,7 @@
 
   export const meta = {
     
-    title: 'Buttons/SlideRoundedFill',
+    title: 'Buttons/Fill/SlideRoundedFill',
     component: SlideRoundedFill,
     tags: ['autodocs'],
     argTypes: {

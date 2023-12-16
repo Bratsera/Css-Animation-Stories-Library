@@ -2,7 +2,7 @@
 	import LetterScale from '$lib/Buttons/LetterScale.svelte';
 
 	export const meta = {
-		title: 'Buttons/LetterScale',
+		title: 'Buttons/LetterAnimation/LetterScale',
 		component: LetterScale,
 		tags: ['autodocs'],
 		argTypes: {

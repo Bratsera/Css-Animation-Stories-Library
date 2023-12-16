@@ -2,7 +2,7 @@
 	import LetterStretch from '$lib/Buttons/LetterStretch.svelte';
 
 	export const meta = {
-		title: 'Buttons/LetterStretch',
+		title: 'Buttons/LetterAnimation/LetterStretch',
 		component: LetterStretch,
 		tags: ['autodocs'],
 		argTypes: {
