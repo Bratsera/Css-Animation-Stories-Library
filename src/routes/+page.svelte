@@ -6,6 +6,7 @@
     import LetterStretch from "$lib/Buttons/LetterStretch.svelte";
     import Swaping from "$lib/Buttons/Swaping.svelte";
     import LetterScale from '$lib/Buttons/LetterScale.svelte';
+    import SlideRoundedFill from '$lib/Buttons/SlideRoundedFill.svelte';
 </script>
     <LetterScale></LetterScale>
     <RotateIn  animationBackgroundColor="#fff200" animationDuration="1s">Hello</RotateIn>
@@ -14,6 +15,7 @@
     <ButtonShine  animationBackgroundColor="red"  ></ButtonShine>
     <LetterStretch>Let it grow</LetterStretch>
     <Swaping></Swaping>
+    <SlideRoundedFill></SlideRoundedFill>
 <style lang="less">
     :root{
         box-sizing: border-box;
